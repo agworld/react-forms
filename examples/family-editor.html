@@ -178,7 +178,7 @@ var RadioButtonGroup = ReactForms.input.RadioButtonGroup
 </div>
 <div class="section" id="sexfield">
 <h3>SexField<a class="headerlink" href="#sexfield" title="Permalink to this headline">¶</a></h3>
-<p><tt class="docutils literal"><span class="pre">SexField</span></tt> represents sex of a person. We want to use a radio button group as an
+<p><code class="docutils literal"><span class="pre">SexField</span></code> represents sex of a person. We want to use a radio button group as an
 input component for this type of values:</p>
 <div class="highlight-python"><div class="highlight"><pre>function SexField(props) {
   props = props || {}
@@ -197,8 +197,8 @@ input component for this type of values:</p>
 }
 </pre></div>
 </div>
-<p>After that we can use this field in a different schemas <tt class="docutils literal"><span class="pre">&lt;SexField</span> <span class="pre">name=&quot;sex&quot;</span>
-<span class="pre">/&gt;</span></tt>. Note how we provide a default values for <tt class="docutils literal"><span class="pre">name</span></tt> and <tt class="docutils literal"><span class="pre">label</span></tt>.</p>
+<p>After that we can use this field in a different schemas <code class="docutils literal"><span class="pre">&lt;SexField</span> <span class="pre">name=&quot;sex&quot;</span>
+<span class="pre">/&gt;</span></code>. Note how we provide a default values for <code class="docutils literal"><span class="pre">name</span></code> and <code class="docutils literal"><span class="pre">label</span></code>.</p>
 </div>
 <div class="section" id="namefield">
 <h3>NameField<a class="headerlink" href="#namefield" title="Permalink to this headline">¶</a></h3>
@@ -228,12 +228,12 @@ validation on name value so it cannot contain number or any other non-letters.</
 }
 </pre></div>
 </div>
-<p>Note that we referenced the <tt class="docutils literal"><span class="pre">&lt;NameInput</span> <span class="pre">/&gt;</span></tt> component. This the thin wrapper on
-for <tt class="docutils literal"><span class="pre">&lt;input</span> <span class="pre">type=&quot;text&quot;</span> <span class="pre">/&gt;</span></tt> which autoformats user input by capitalizing it.</p>
+<p>Note that we referenced the <code class="docutils literal"><span class="pre">&lt;NameInput</span> <span class="pre">/&gt;</span></code> component. This the thin wrapper on
+for <code class="docutils literal"><span class="pre">&lt;input</span> <span class="pre">type=&quot;text&quot;</span> <span class="pre">/&gt;</span></code> which autoformats user input by capitalizing it.</p>
 </div>
 <div class="section" id="dateofbirthfield">
 <h3>DateOfBirthField<a class="headerlink" href="#dateofbirthfield" title="Permalink to this headline">¶</a></h3>
-<p><tt class="docutils literal"><span class="pre">DateOfBirthField</span></tt> is define similar to previous fields:</p>
+<p><code class="docutils literal"><span class="pre">DateOfBirthField</span></code> is define similar to previous fields:</p>
 <div class="highlight-python"><div class="highlight"><pre>function DateOfBirthField(props) {
   props = props || {}
   return (
@@ -251,10 +251,10 @@ for <tt class="docutils literal"><span class="pre">&lt;input</span> <span class=
 <div class="section" id="adult-and-child">
 <h3>Adult and Child<a class="headerlink" href="#adult-and-child" title="Permalink to this headline">¶</a></h3>
 <p>Now we can define schemas for adults and children, both using already defined
-<tt class="docutils literal"><span class="pre">NameField</span></tt>, <tt class="docutils literal"><span class="pre">DateOfBirthField</span></tt> and <tt class="docutils literal"><span class="pre">SexField</span></tt>.</p>
-<p>Note the <tt class="docutils literal"><span class="pre">component</span></tt> property of <tt class="docutils literal"><span class="pre">Child</span></tt> schema what defines which fieldset
+<code class="docutils literal"><span class="pre">NameField</span></code>, <code class="docutils literal"><span class="pre">DateOfBirthField</span></code> and <code class="docutils literal"><span class="pre">SexField</span></code>.</p>
+<p>Note the <code class="docutils literal"><span class="pre">component</span></code> property of <code class="docutils literal"><span class="pre">Child</span></code> schema what defines which fieldset
 component should be used to render schemas of such type. We will show how to
-define <tt class="docutils literal"><span class="pre">ChildFieldset</span></tt> below:</p>
+define <code class="docutils literal"><span class="pre">ChildFieldset</span></code> below:</p>
 <div class="highlight-python"><div class="highlight"><pre>function Adult(props) {
   props = props || {}
   return (
@@ -288,7 +288,7 @@ function Child(props) {
 <h3>Family<a class="headerlink" href="#family" title="Permalink to this headline">¶</a></h3>
 <p>Finally the schema for family would look like a composition of schema types we
 defined previously.</p>
-<p>Note how we have defined <tt class="docutils literal"><span class="pre">Children</span></tt> as a list of <tt class="docutils literal"><span class="pre">Child</span></tt>. That describes that a
+<p>Note how we have defined <code class="docutils literal"><span class="pre">Children</span></code> as a list of <code class="docutils literal"><span class="pre">Child</span></code>. That describes that a
 family can have multiple children and form would have a corresponding UI
 controls to add and remove children records:</p>
 <div class="highlight-python"><div class="highlight"><pre>function Family(props) {
@@ -308,7 +308,7 @@ controls to add and remove children records:</p>
 </div>
 <div class="section" id="custom-input-component-for-name-formatting">
 <h3>Custom input component for name formatting<a class="headerlink" href="#custom-input-component-for-name-formatting" title="Permalink to this headline">¶</a></h3>
-<p>Now let&#8217;s define <tt class="docutils literal"><span class="pre">&lt;NameInput</span> <span class="pre">/&gt;</span></tt> component which is used by <tt class="docutils literal"><span class="pre">NameField</span></tt> field to
+<p>Now let&#8217;s define <code class="docutils literal"><span class="pre">&lt;NameInput</span> <span class="pre">/&gt;</span></code> component which is used by <code class="docutils literal"><span class="pre">NameField</span></code> field to
 capitalize user input automatically:</p>
 <div class="highlight-python"><div class="highlight"><pre>var NameInput = React.createClass({
 
@@ -352,21 +352,21 @@ capitalize user input automatically:</p>
 </pre></div>
 </div>
 <p>It is a little verbose because we need to take care of cursor position in input
-box. But other than that it is a thin wrapper for <tt class="docutils literal"><span class="pre">&lt;input</span> <span class="pre">type=&quot;text&quot;</span> <span class="pre">/&gt;</span></tt> which
+box. But other than that it is a thin wrapper for <code class="docutils literal"><span class="pre">&lt;input</span> <span class="pre">type=&quot;text&quot;</span> <span class="pre">/&gt;</span></code> which
 just capitalizes every word in a value.</p>
 </div>
 <div class="section" id="custom-fieldset-component-for-child">
 <h3>Custom fieldset component for Child<a class="headerlink" href="#custom-fieldset-component-for-child" title="Permalink to this headline">¶</a></h3>
-<p>Now we define <tt class="docutils literal"><span class="pre">ChildFieldset</span></tt> component which is used to render values described
-with <tt class="docutils literal"><span class="pre">Child</span></tt> schema. The reason we want to do this is that we want to show a
+<p>Now we define <code class="docutils literal"><span class="pre">ChildFieldset</span></code> component which is used to render values described
+with <code class="docutils literal"><span class="pre">Child</span></code> schema. The reason we want to do this is that we want to show a
 different set of fields based on a sex of a child.</p>
-<p>Note that creating a fieldset component reduces down to using <tt class="docutils literal"><span class="pre">FieldsetMixin</span></tt>
-mixin and defining <tt class="docutils literal"><span class="pre">render()</span></tt> method.</p>
-<p><tt class="docutils literal"><span class="pre">FieldsetMixin</span></tt> provides <tt class="docutils literal"><span class="pre">value()</span></tt> method which allows accessing a current
-form value for this particular schema node via <tt class="docutils literal"><span class="pre">value().value</span></tt>.</p>
-<p>To render its fields <tt class="docutils literal"><span class="pre">ChildFieldset</span></tt> component uses a <tt class="docutils literal"><span class="pre">FormFor</span></tt> component
+<p>Note that creating a fieldset component reduces down to using <code class="docutils literal"><span class="pre">FieldsetMixin</span></code>
+mixin and defining <code class="docutils literal"><span class="pre">render()</span></code> method.</p>
+<p><code class="docutils literal"><span class="pre">FieldsetMixin</span></code> provides <code class="docutils literal"><span class="pre">value()</span></code> method which allows accessing a current
+form value for this particular schema node via <code class="docutils literal"><span class="pre">value().value</span></code>.</p>
+<p>To render its fields <code class="docutils literal"><span class="pre">ChildFieldset</span></code> component uses a <code class="docutils literal"><span class="pre">FormFor</span></code> component
 which automatically receives a corresponding schema and value based on its
-<tt class="docutils literal"><span class="pre">name</span></tt> property:</p>
+<code class="docutils literal"><span class="pre">name</span></code> property:</p>
 <div class="highlight-python"><div class="highlight"><pre>var ChildFieldset = React.createClass({
   mixins: [ReactForms.FieldsetMixin],
 
@@ -390,8 +390,8 @@ which automatically receives a corresponding schema and value based on its
 </div>
 <div class="section" id="rendering-forms">
 <h3>Rendering forms<a class="headerlink" href="#rendering-forms" title="Permalink to this headline">¶</a></h3>
-<p>Finally we can render our <em>Family form</em> by simply using <tt class="docutils literal"><span class="pre">Form</span></tt> component with
-out <tt class="docutils literal"><span class="pre">Family</span></tt> schema:</p>
+<p>Finally we can render our <em>Family form</em> by simply using <code class="docutils literal"><span class="pre">Form</span></code> component with
+out <code class="docutils literal"><span class="pre">Family</span></code> schema:</p>
 <div class="highlight-python"><div class="highlight"><pre>React.renderComponent(
   &lt;Form schema={&lt;Family /&gt;} /&gt;,
   document.getElementById(&#39;example&#39;)
@@ -420,11 +420,11 @@ function SexField(props) {
     {value: 'female', name: 'Female'}
   ]
   return (
-    Property(
-      {name:props.name || 'sex',
-      label:props.label || 'Sex',
-      required:props.required,
-      input:RadioButtonGroup( {options:options} )}
+    React.createElement(Property, {
+      name: props.name || 'sex', 
+      label: props.label || 'Sex', 
+      required: props.required, 
+      input: React.createElement(RadioButtonGroup, {options: options})}
       )
   )
 }
@@ -434,34 +434,34 @@ function validateName(v) {
 function NameField(props) {
   props = props || {}
   return (
-    Property(
-      {required:props.required,
-      defaultValue:props.defaultValue,
-      name:props.name || 'name',
-      label:props.label || 'Name',
-      hint:"Should contain only alphanumeric characters",
-      input:NameInput(),
-      validate:validateName}
+    React.createElement(Property, {
+      required: props.required, 
+      defaultValue: props.defaultValue, 
+      name: props.name || 'name', 
+      label: props.label || 'Name', 
+      hint: "Should contain only alphanumeric characters", 
+      input: NameInput(), 
+      validate: validateName}
       )
   )
 }
 function DateOfBirthField(props) {
   props = props || {}
   return (
-    Property(
-      {name:props.name || 'dob',
-      label:props.label || 'Date of Birth',
-      hint:"Should be in YYYY-MM-DD format",
-      type:"date"}
+    React.createElement(Property, {
+      name: props.name || 'dob', 
+      label: props.label || 'Date of Birth', 
+      hint: "Should be in YYYY-MM-DD format", 
+      type: "date"}
       )
   )
 }
 function Adult(props) {
   props = props || {}
   return (
-    Schema( {label:props.label || 'Adult', name:props.name}, 
-      NameField(null ),
-      DateOfBirthField(null )
+    React.createElement(Schema, {label: props.label || 'Adult', name: props.name}, 
+      React.createElement(NameField, null), 
+      React.createElement(DateOfBirthField, null)
     )
   )
 }
@@ -469,27 +469,27 @@ function Adult(props) {
 function Child(props) {
   props = props || {}
   return (
-    Schema( {component:ChildFieldset, name:props.name}, 
-      NameField(null ),
-      DateOfBirthField(null ),
-      SexField( {required:true} ),
-      Property(
-        {label:"Female specific value",
-        name:"femaleSpecificValue"} ),
-      Property(
-        {label:"Male specific value",
-        name:"maleSpecificValue"} )
+    React.createElement(Schema, {component: ChildFieldset, name: props.name}, 
+      React.createElement(NameField, null), 
+      React.createElement(DateOfBirthField, null), 
+      React.createElement(SexField, {required: true}), 
+      React.createElement(Property, {
+        label: "Female specific value", 
+        name: "femaleSpecificValue"}), 
+      React.createElement(Property, {
+        label: "Male specific value", 
+        name: "maleSpecificValue"})
     )
   )
 }
 function Family(props) {
   props = props || {}
   return (
-    Schema( {name:props.name, label:props.label || 'Family'}, 
-      Adult( {name:"mother", label:"Mother"} ),
-      Adult( {name:"father", label:"Father"} ),
-      List( {label:"Children", name:"children"}, 
-        Child(null )
+    React.createElement(Schema, {name: props.name, label: props.label || 'Family'}, 
+      React.createElement(Adult, {name: "mother", label: "Mother"}), 
+      React.createElement(Adult, {name: "father", label: "Father"}), 
+      React.createElement(List, {label: "Children", name: "children"}, 
+        React.createElement(Child, null)
       )
     )
   )
@@ -525,10 +525,10 @@ var NameInput = React.createClass({displayName: 'NameInput',
   render: function() {
     var value = this.format(this.props.value)
     return this.transferPropsTo(
-      React.DOM.input(
-        {type:"text",
-        value:value,
-        onChange:this.onChange}
+      React.createElement("input", {
+        type: "text", 
+        value: value, 
+        onChange: this.onChange}
         )
     )
   }
@@ -539,20 +539,20 @@ var ChildFieldset = React.createClass({displayName: 'ChildFieldset',
   render: function() {
     var sex = this.value().value.sex
     return this.transferPropsTo(
-      React.DOM.div( {className:"react-forms-fieldset"}, 
-        FormFor( {name:"name"} ),
-        FormFor( {name:"dob"} ),
-        FormFor( {name:"sex"} ),
+      React.createElement("div", {className: "react-forms-fieldset"}, 
+        React.createElement(FormFor, {name: "name"}), 
+        React.createElement(FormFor, {name: "dob"}), 
+        React.createElement(FormFor, {name: "sex"}), 
         sex === 'male' &&
-          FormFor( {name:"maleSpecificValue"} ),
+          React.createElement(FormFor, {name: "maleSpecificValue"}), 
         sex === 'female' &&
-          FormFor( {name:"femaleSpecificValue"} )
+          React.createElement(FormFor, {name: "femaleSpecificValue"})
       )
     )
   }
 })
 React.renderComponent(
-  Form( {schema:Family(null )} ),
+  React.createElement(Form, {schema: React.createElement(Family, null)}),
   document.getElementById('example')
 )
     });

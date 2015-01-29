@@ -182,10 +182,10 @@
 )
 </pre></div>
 </div>
-<p>Note how we use <tt class="docutils literal"><span class="pre">required</span></tt> property on schema nodes to tell React Forms we
+<p>Note how we use <code class="docutils literal"><span class="pre">required</span></code> property on schema nodes to tell React Forms we
 want the form to be valid only if values for those schema nodes are present.</p>
-<p>We also provide a custom validator to <tt class="docutils literal"><span class="pre">email</span></tt> field.</p>
-<p>Now we define a form component which wraps React Forms <tt class="docutils literal"><span class="pre">Form</span></tt> component and
+<p>We also provide a custom validator to <code class="docutils literal"><span class="pre">email</span></code> field.</p>
+<p>Now we define a form component which wraps React Forms <code class="docutils literal"><span class="pre">Form</span></code> component and
 provides a button to submit a form:</p>
 <div class="highlight-python"><div class="highlight"><pre>var MyForm = React.createClass({
 
@@ -220,7 +220,7 @@ provides a button to submit a form:</p>
 })
 </pre></div>
 </div>
-<p>And finally we render <tt class="docutils literal"><span class="pre">MyForm</span></tt> into DOM:</p>
+<p>And finally we render <code class="docutils literal"><span class="pre">MyForm</span></code> into DOM:</p>
 <div class="highlight-python"><div class="highlight"><pre>React.renderComponent(
   &lt;MyForm schema={schema} /&gt;,
   document.getElementById(&#39;example&#39;))
@@ -238,19 +238,19 @@ var Schema = ReactForms.schema.Schema
 var Property = ReactForms.schema.Property
 var Form = ReactForms.Form
 var schema = (
-  Schema(null, 
-    Property(
-      {name:"description",
-      required:true,
-      label:"Message",
-      input:React.DOM.textarea( {placeholder:"Give us details here..."} )}
-    ),
-    Property(
-      {name:"email",
-      label:"Email",
-      required:true,
-      input:React.DOM.input( {type:"email"} ),
-      validate:function(v) { return /.+\@.+\..+/.test(v) }}
+  React.createElement(Schema, null, 
+    React.createElement(Property, {
+      name: "description", 
+      required: true, 
+      label: "Message", 
+      input: React.createElement("textarea", {placeholder: "Give us details here..."})}
+    ), 
+    React.createElement(Property, {
+      name: "email", 
+      label: "Email", 
+      required: true, 
+      input: React.createElement("input", {type: "email"}), 
+      validate: function(v) { return /.+\@.+\..+/.test(v) }}
     )
   )
 )
@@ -260,14 +260,14 @@ var MyForm = React.createClass({displayName: 'MyForm',
 
     // render Form as <div /> and transfer all props to it
     var form = this.transferPropsTo(
-      Form( {ref:"form", component:React.DOM.div} )
+      React.createElement(Form, {ref: "form", component: React.DOM.div})
     )
 
     // return <form /> component with rendered form and a submit button
     return (
-        React.DOM.form( {onSubmit:this.onSubmit, className:"MyForm"}, 
-          form,
-          React.DOM.button( {type:"submit"}, "Submit")
+        React.createElement("form", {onSubmit: this.onSubmit, className: "MyForm"}, 
+          form, 
+          React.createElement("button", {type: "submit"}, "Submit")
         )
     )
   },
@@ -286,7 +286,7 @@ var MyForm = React.createClass({displayName: 'MyForm',
   }
 })
 React.renderComponent(
-  MyForm( {schema:schema} ),
+  React.createElement(MyForm, {schema: schema}),
   document.getElementById('example'))
     });
     </script>

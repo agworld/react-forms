@@ -182,7 +182,7 @@ var Property = ReactForms.schema.Property
 var RepeatingFieldset = ReactForms.RepeatingFieldset
 </pre></div>
 </div>
-<p>First we define a reusable <tt class="docutils literal"><span class="pre">UndoStack</span></tt> mixin:</p>
+<p>First we define a reusable <code class="docutils literal"><span class="pre">UndoStack</span></code> mixin:</p>
 <div class="highlight-python"><div class="highlight"><pre>var UndoStack = {
 
   getInitialState: function() {
@@ -236,8 +236,8 @@ var RepeatingFieldset = ReactForms.RepeatingFieldset
 </pre></div>
 </div>
 <p>This mixin is completely reusable outside of React Forms, it expects a component
-which uses it to define <tt class="docutils literal"><span class="pre">getStateSnapshot()</span></tt> and
-<tt class="docutils literal"><span class="pre">setStateSnapshot(snapshot)</span></tt> methods which returns and installs state
+which uses it to define <code class="docutils literal"><span class="pre">getStateSnapshot()</span></code> and
+<code class="docutils literal"><span class="pre">setStateSnapshot(snapshot)</span></code> methods which returns and installs state
 snapshots.</p>
 </div>
 <div class="section" id="undocontrols">
@@ -269,8 +269,8 @@ snapshots.</p>
 </div>
 <div class="section" id="formwithundo">
 <h3>FormWithUndo<a class="headerlink" href="#formwithundo" title="Permalink to this headline">¶</a></h3>
-<p>The final part is to define a custom <tt class="docutils literal"><span class="pre">Form</span></tt> component which renders
-<tt class="docutils literal"><span class="pre">UndoControls</span></tt> and mixes in <tt class="docutils literal"><span class="pre">UndoStack</span></tt> mixin:</p>
+<p>The final part is to define a custom <code class="docutils literal"><span class="pre">Form</span></code> component which renders
+<code class="docutils literal"><span class="pre">UndoControls</span></code> and mixes in <code class="docutils literal"><span class="pre">UndoStack</span></code> mixin:</p>
 <div class="highlight-python"><div class="highlight"><pre>var FormWithUndo = React.createClass({
   mixins: [ReactForms.FormMixin, UndoStack],
 
@@ -300,7 +300,7 @@ snapshots.</p>
 })
 </pre></div>
 </div>
-<p>The <tt class="docutils literal"><span class="pre">FormWithUndo</span></tt> usage is no different than using an original <tt class="docutils literal"><span class="pre">Form</span></tt>
+<p>The <code class="docutils literal"><span class="pre">FormWithUndo</span></code> usage is no different than using an original <code class="docutils literal"><span class="pre">Form</span></code>
 component:</p>
 <div class="highlight-python"><div class="highlight"><pre>function Product(props) {
   props = props || {}
@@ -393,17 +393,17 @@ var UndoStack = {
 var UndoControls = React.createClass({displayName: 'UndoControls',
   render: function() {
     return (
-      React.DOM.div( {className:"UndoControls"}, 
-        React.DOM.button(
-          {disabled:!this.props.hasUndo,
-          onClick:this.props.onUndo,
-          type:"button", className:"button"}, 
+      React.createElement("div", {className: "UndoControls"}, 
+        React.createElement("button", {
+          disabled: !this.props.hasUndo, 
+          onClick: this.props.onUndo, 
+          type: "button", className: "button"}, 
           "⟲ Undo"
-        ),
-        React.DOM.button(
-          {disabled:!this.props.hasRedo,
-          onClick:this.props.onRedo,
-          type:"button", className:"button"}, 
+        ), 
+        React.createElement("button", {
+          disabled: !this.props.hasRedo, 
+          onClick: this.props.onRedo, 
+          type: "button", className: "button"}, 
           "⟳ Redo"
         )
       )
@@ -423,16 +423,16 @@ var FormWithUndo = React.createClass({displayName: 'FormWithUndo',
 
   render: function() {
     return this.transferPropsTo(
-      React.DOM.form( {className:"Form"}, 
-        UndoControls(
-          {hasUndo:this.hasUndo(),
-          hasRedo:this.hasRedo(),
-          onUndo:this.undo,
-          onRedo:this.redo}
-          ),
-        RepeatingFieldset(
-          {onRemove:this.snapshot,
-          onAdd:this.snapshot} )
+      React.createElement("form", {className: "Form"}, 
+        React.createElement(UndoControls, {
+          hasUndo: this.hasUndo(), 
+          hasRedo: this.hasRedo(), 
+          onUndo: this.undo, 
+          onRedo: this.redo}
+          ), 
+        React.createElement(RepeatingFieldset, {
+          onRemove: this.snapshot, 
+          onAdd: this.snapshot})
       )
     )
   }
@@ -440,20 +440,20 @@ var FormWithUndo = React.createClass({displayName: 'FormWithUndo',
 function Product(props) {
   props = props || {}
   return (
-    Schema( {required:props.required, name:props.name, label:props.label}, 
-      Property( {name:"name", label:"Name"} ),
-      Property( {type:"number", name:"price", label:"Price"} )
+    React.createElement(Schema, {required: props.required, name: props.name, label: props.label}, 
+      React.createElement(Property, {name: "name", label: "Name"}), 
+      React.createElement(Property, {type: "number", name: "price", label: "Price"})
     )
   )
 }
 
 var Products = (
-  List( {label:"Products"}, 
-    Product(null )
+  React.createElement(List, {label: "Products"}, 
+    React.createElement(Product, null)
   )
 )
 React.renderComponent(
-  FormWithUndo( {schema:Products, value:[{name: 'TV', price: 1000}]} ),
+  React.createElement(FormWithUndo, {schema: Products, value: [{name: 'TV', price: 1000}]}),
   document.getElementById('example')
 )
     });

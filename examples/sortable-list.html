@@ -155,7 +155,7 @@
   <div class="section" id="sortable-list-example">
 <h1>Sortable list example<a class="headerlink" href="#sortable-list-example" title="Permalink to this headline">¶</a></h1>
 <p>This example demonstrates how to implement a custom component on top of
-<tt class="docutils literal"><span class="pre">RepeatingFieldset</span></tt> which allows to sort items via drag&#8217;n&#8217;drop.</p>
+<code class="docutils literal"><span class="pre">RepeatingFieldset</span></code> which allows to sort items via drag&#8217;n&#8217;drop.</p>
 <p>Add a few items and try to drag them with the handle to sort items in a list.</p>
 <style>
   .SortableHandle {
@@ -212,7 +212,7 @@ function swap(array, a, b) {
 }
 </pre></div>
 </div>
-<p>Now we implement a <tt class="docutils literal"><span class="pre">DraggableMixin</span></tt> which provides some basic drag&#8217;n&#8217;drop
+<p>Now we implement a <code class="docutils literal"><span class="pre">DraggableMixin</span></code> which provides some basic drag&#8217;n&#8217;drop
 functionality:</p>
 <div class="highlight-python"><div class="highlight"><pre>var DraggableMixin = {
 
@@ -519,11 +519,11 @@ var SortableItem = React.createClass({displayName: 'SortableItem',
 
   render: function() {
     return this.transferPropsTo(
-      Item( {className:"SortableItem", onMouseMove:this.onSortOver}, 
-        React.DOM.div(
-          {className:"SortableHandle",
-          onMouseDown:this.onSortStart}, 
-          "drag to sort"),
+      React.createElement(Item, {className: "SortableItem", onMouseMove: this.onSortOver}, 
+        React.createElement("div", {
+          className: "SortableHandle", 
+          onMouseDown: this.onSortStart}, 
+          "drag to sort"), 
 
         this.props.children
       )
@@ -563,7 +563,7 @@ var SortableRepeatingFieldset = React.createClass({displayName: 'SortableRepeati
       SortableActive: this.state.sorting !== null
     })
     return this.transferPropsTo(
-      RepeatingFieldset( {className:className, item:this.renderItem} )
+      React.createElement(RepeatingFieldset, {className: className, item: this.renderItem})
     )
   },
 
@@ -576,10 +576,10 @@ var SortableRepeatingFieldset = React.createClass({displayName: 'SortableRepeati
   renderItem: function(props, child) {
     var sorting = this.state.sorting
     if (sorting && sorting.name === props.name) {
-      return React.DOM.div(
-        {key:props.name,
-        style:sorting.size,
-        className:"SortablePlaceholder"} )
+      return React.createElement("div", {
+        key: props.name, 
+        style: sorting.size, 
+        className: "SortablePlaceholder"})
     } else {
       props = merge(props, {
         sorting: sorting,
@@ -639,21 +639,21 @@ var SortableRepeatingFieldset = React.createClass({displayName: 'SortableRepeati
   }
 })
 var Persons = (
-  List( {component:SortableRepeatingFieldset}, 
-    Schema(null, 
-      Property( {label:"First name", name:"firstName"} ),
-      Property( {label:"Last name", name:"lastName"} )
+  React.createElement(List, {component: SortableRepeatingFieldset}, 
+    React.createElement(Schema, null, 
+      React.createElement(Property, {label: "First name", name: "firstName"}), 
+      React.createElement(Property, {label: "Last name", name: "lastName"})
     )
   )
 )
 
 
 React.renderComponent(
-  Form( {schema:Persons, value:[
+  React.createElement(Form, {schema: Persons, value: [
       {firstName: 'Jane', lastName: 'Roe'},
       {firstName: 'Richard', lastName: 'Miles'},
       {firstName: 'John', lastName: 'Doe'}
-    ]} ),
+    ]}),
   document.getElementById('example')
 )
     });

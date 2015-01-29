@@ -154,7 +154,7 @@
 <p>Form schemas are high-level declarative descriptions of forms. They describe
 every field of the form, how it should rendered, what&#8217;s the shape of the data
 and how it should be validated.</p>
-<p>React Forms provides <tt class="docutils literal"><span class="pre">Schema</span></tt>, <tt class="docutils literal"><span class="pre">List</span></tt> and <tt class="docutils literal"><span class="pre">Property</span></tt> schema nodes to
+<p>React Forms provides <code class="docutils literal"><span class="pre">Schema</span></code>, <code class="docutils literal"><span class="pre">List</span></code> and <code class="docutils literal"><span class="pre">Property</span></code> schema nodes to
 describe mapping, list and scalar values correspondingly:</p>
 <div class="highlight-python"><div class="highlight"><pre>var Schema    = ReactForms.schema.Schema
 var List      = ReactForms.schema.List
@@ -166,10 +166,10 @@ var PersonSchema = Schema(null,
 )
 </pre></div>
 </div>
-<p>Object <tt class="docutils literal"><span class="pre">PersonSchema</span></tt> is a schema for objects which represent persons, every
-person have <tt class="docutils literal"><span class="pre">name</span></tt> and <tt class="docutils literal"><span class="pre">dob</span></tt> properties with labels <tt class="docutils literal"><span class="pre">Name</span></tt> and <tt class="docutils literal"><span class="pre">Date</span> <span class="pre">Of</span>
-<span class="pre">Birth</span></tt> correspondingly. Attribute <tt class="docutils literal"><span class="pre">name</span></tt> is required for schema nodes which
-are defined as a part of <tt class="docutils literal"><span class="pre">Schema</span></tt> declarations.</p>
+<p>Object <code class="docutils literal"><span class="pre">PersonSchema</span></code> is a schema for objects which represent persons, every
+person have <code class="docutils literal"><span class="pre">name</span></code> and <code class="docutils literal"><span class="pre">dob</span></code> properties with labels <code class="docutils literal"><span class="pre">Name</span></code> and <code class="docutils literal"><span class="pre">Date</span> <span class="pre">Of</span>
+<span class="pre">Birth</span></code> correspondingly. Attribute <code class="docutils literal"><span class="pre">name</span></code> is required for schema nodes which
+are defined as a part of <code class="docutils literal"><span class="pre">Schema</span></code> declarations.</p>
 <p>Forms schema API is designed to be compatible with JSX. The schema above can be
 specified using JSX syntax:</p>
 <div class="highlight-python"><div class="highlight"><pre>var PersonSchema = (
@@ -195,26 +195,26 @@ schema nodes based on arguments passed:</p>
 </div>
 <div class="section" id="schema-metadata">
 <h2>Schema metadata<a class="headerlink" href="#schema-metadata" title="Permalink to this headline">¶</a></h2>
-<p>There are a couple of schema metadata (alongside <tt class="docutils literal"><span class="pre">name</span></tt>) supported by form
+<p>There are a couple of schema metadata (alongside <code class="docutils literal"><span class="pre">name</span></code>) supported by form
 components out of the box.</p>
 <p>Schema metadata related to validation:</p>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="docutils literal"><span class="pre">type</span></tt> property can be used to specify type of the schema which defines how
+<li><code class="docutils literal"><span class="pre">type</span></code> property can be used to specify type of the schema which defines how
 object is serialized to/deserialize from DOM value. You can read more about
 schema types below.</li>
-<li><tt class="docutils literal"><span class="pre">validate</span></tt> property is used to specify validators for
+<li><code class="docutils literal"><span class="pre">validate</span></code> property is used to specify validators for
 values corresponding to schema.</li>
-<li><tt class="docutils literal"><span class="pre">defaultValue</span></tt> is used to define a value which will be used when a
+<li><code class="docutils literal"><span class="pre">defaultValue</span></code> is used to define a value which will be used when a
 corresponding value for schema node is absent</li>
 </ul>
 </div></blockquote>
 <p>Schema metadata related to presentation:</p>
 <blockquote>
 <div><ul class="simple">
-<li><tt class="docutils literal"><span class="pre">label</span></tt> property is used by form components to render <tt class="docutils literal"><span class="pre">&lt;label</span> <span class="pre">/&gt;</span></tt>
+<li><code class="docutils literal"><span class="pre">label</span></code> property is used by form components to render <code class="docutils literal"><span class="pre">&lt;label</span> <span class="pre">/&gt;</span></code>
 elements for form fields</li>
-<li><tt class="docutils literal"><span class="pre">hint</span></tt> property if specified</li>
+<li><code class="docutils literal"><span class="pre">hint</span></code> property if specified</li>
 </ul>
 </div></blockquote>
 <p>Example of schema declarations which define all the available metadata
@@ -236,8 +236,8 @@ properties:</p>
 they represent.</p>
 <p>Type defines how value is serialized to/deserialized from its DOM
 representation. For example if you work with dates you would want to define type
-which would marshal strings in format <tt class="docutils literal"><span class="pre">&quot;YYYY-MM-DD&quot;</span></tt> into <tt class="docutils literal"><span class="pre">Date</span></tt> objects and
-vice versa. Fortunately there&#8217;s built-in <tt class="docutils literal"><span class="pre">date</span></tt> type for that:</p>
+which would marshal strings in format <code class="docutils literal"><span class="pre">&quot;YYYY-MM-DD&quot;</span></code> into <code class="docutils literal"><span class="pre">Date</span></code> objects and
+vice versa. Fortunately there&#8217;s built-in <code class="docutils literal"><span class="pre">date</span></code> type for that:</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;Schema&gt;
   ...
   &lt;Property name=&quot;birthday&quot; type=&quot;date&quot; /&gt;
@@ -245,14 +245,14 @@ vice versa. Fortunately there&#8217;s built-in <tt class="docutils literal"><spa
 &lt;/Schema&gt;
 </pre></div>
 </div>
-<p>You can refer to built-in types by specifying a <tt class="docutils literal"><span class="pre">type</span></tt> property which has type
+<p>You can refer to built-in types by specifying a <code class="docutils literal"><span class="pre">type</span></code> property which has type
 name as its string value. Currently React Forms provide a limited set of
-built-in types: <tt class="docutils literal"><span class="pre">date</span></tt>, <tt class="docutils literal"><span class="pre">number</span></tt> and <tt class="docutils literal"><span class="pre">string</span></tt> (used by default if no type
+built-in types: <code class="docutils literal"><span class="pre">date</span></code>, <code class="docutils literal"><span class="pre">number</span></code> and <code class="docutils literal"><span class="pre">string</span></code> (used by default if no type
 is specified). But you can create a custom one easily.</p>
-<p>Schema types are simply objects with <tt class="docutils literal"><span class="pre">serialize</span></tt> and <tt class="docutils literal"><span class="pre">deserialize</span></tt> methods.
-Method <tt class="docutils literal"><span class="pre">serialize</span></tt> is called before value is sent to input component and
-<tt class="docutils literal"><span class="pre">deserialize</span></tt> is called on change before validation occurs.</p>
-<p>Method <tt class="docutils literal"><span class="pre">deserialize</span></tt> could also throw an exception in case it cannot
+<p>Schema types are simply objects with <code class="docutils literal"><span class="pre">serialize</span></code> and <code class="docutils literal"><span class="pre">deserialize</span></code> methods.
+Method <code class="docutils literal"><span class="pre">serialize</span></code> is called before value is sent to input component and
+<code class="docutils literal"><span class="pre">deserialize</span></code> is called on change before validation occurs.</p>
+<p>Method <code class="docutils literal"><span class="pre">deserialize</span></code> could also throw an exception in case it cannot
 deserialize a passed value:</p>
 <div class="highlight-python"><div class="highlight"><pre>var MyType = {
 
@@ -277,8 +277,8 @@ deserialize a passed value:</p>
 <p>Schema is used by form components to validate form value. Basic validation is
 done by schema types. But to specify more sophisticated validation rules one can
 attach custom validators to each schema node.</p>
-<p>Validators are functions which can return a boolean value: <tt class="docutils literal"><span class="pre">true</span></tt> corresponds
-to validation success and <tt class="docutils literal"><span class="pre">false</span></tt> to validation failure.</p>
+<p>Validators are functions which can return a boolean value: <code class="docutils literal"><span class="pre">true</span></code> corresponds
+to validation success and <code class="docutils literal"><span class="pre">false</span></code> to validation failure.</p>
 <p>For example one can define a reusable schema node for positive numbers which
 validates only if corresponding value is a number and is greater than zero:</p>
 <div class="highlight-python"><div class="highlight"><pre>function PositiveNumber(props) {

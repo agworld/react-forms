@@ -157,24 +157,24 @@ also providing support for AMD and a standalone builds of React Forms.</p>
 <div class="section" id="getting-started-with-commonjs">
 <h2>Getting started with CommonJS<a class="headerlink" href="#getting-started-with-commonjs" title="Permalink to this headline">¶</a></h2>
 <p>React Forms is distributed as a set of CommonJS modules available through <a class="reference external" href="http://npmjs.org">npm</a>
-package registry. You can install both React Forms and React via <tt class="docutils literal"><span class="pre">npm</span></tt> command
+package registry. You can install both React Forms and React via <code class="docutils literal"><span class="pre">npm</span></code> command
 line tool.</p>
 <div class="inline admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><tt class="docutils literal"><span class="pre">npm</span></tt> command-line utility comes bundled with a Node.js installation.</p>
+<p class="last"><code class="docutils literal"><span class="pre">npm</span></code> command-line utility comes bundled with a Node.js installation.</p>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>% npm install react-forms react
 </pre></div>
 </div>
-<p>This will create a <tt class="docutils literal"><span class="pre">node_modules</span></tt> directory in the current working directory
-with <tt class="docutils literal"><span class="pre">react</span></tt> and <tt class="docutils literal"><span class="pre">react-forms</span></tt> packages installed.</p>
-<p>Now create a file called <tt class="docutils literal"><span class="pre">index.js</span></tt>. First we need to bring React Forms and
-React into scope using <tt class="docutils literal"><span class="pre">require()</span></tt> function. We also alias some definitions
+<p>This will create a <code class="docutils literal"><span class="pre">node_modules</span></code> directory in the current working directory
+with <code class="docutils literal"><span class="pre">react</span></code> and <code class="docutils literal"><span class="pre">react-forms</span></code> packages installed.</p>
+<p>Now create a file called <code class="docutils literal"><span class="pre">index.js</span></code>. First we need to bring React Forms and
+React into scope using <code class="docutils literal"><span class="pre">require()</span></code> function. We also alias some definitions
 to make them look better and more descriptive.</p>
 <div class="inline admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">For the sake of simplicity we will assume that all application code lives in a
-single file <tt class="docutils literal"><span class="pre">index.js</span></tt>. But in the real-world scenariou CommonJS module
+single file <code class="docutils literal"><span class="pre">index.js</span></code>. But in the real-world scenariou CommonJS module
 format makes it easy to factor out application into separate modules.</p>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>var React = require(&#39;react&#39;)
@@ -196,7 +196,7 @@ and how to present form fields to a user:</p>
 )
 </pre></div>
 </div>
-<p>Now the final step is to render a <tt class="docutils literal"><span class="pre">Form</span></tt> component with this schema:</p>
+<p>Now the final step is to render a <code class="docutils literal"><span class="pre">Form</span></code> component with this schema:</p>
 <div class="highlight-python"><div class="highlight"><pre>React.renderComponent(
   &lt;Form schema={schema} /&gt;,
   document.getElementById(&#39;form&#39;))
@@ -213,26 +213,26 @@ via npm and bundle them into a single (or multiple) files.</p>
 their strengths and weaknesses.</p>
 <div class="section" id="bundling-commonjs-with-browserify">
 <h4>Bundling CommonJS with Browserify<a class="headerlink" href="#bundling-commonjs-with-browserify" title="Permalink to this headline">¶</a></h4>
-<p>Browserify can be installed via npm. We also need a <tt class="docutils literal"><span class="pre">reactify</span></tt> package which
+<p>Browserify can be installed via npm. We also need a <code class="docutils literal"><span class="pre">reactify</span></code> package which
 provides a transform for Browserify which compiles JSX syntax to standard
 JavaScript. Install both with the following commands:</p>
 <div class="inline admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><tt class="docutils literal"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">-g</span></tt> will install browserify so it&#8217;s available as a &#8220;global&#8221;
-<tt class="docutils literal"><span class="pre">browserify</span></tt> command. This can require sudo on Unix/Linux/Mac OS X.
-Alternatively you can install without <tt class="docutils literal"><span class="pre">-g</span></tt> flag and refer to
-<tt class="docutils literal"><span class="pre">./node_modules/.bin/browserify</span></tt> executable.</p>
+<p class="last"><code class="docutils literal"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">-g</span></code> will install browserify so it&#8217;s available as a &#8220;global&#8221;
+<code class="docutils literal"><span class="pre">browserify</span></code> command. This can require sudo on Unix/Linux/Mac OS X.
+Alternatively you can install without <code class="docutils literal"><span class="pre">-g</span></code> flag and refer to
+<code class="docutils literal"><span class="pre">./node_modules/.bin/browserify</span></code> executable.</p>
 </div>
 <div class="highlight-python"><div class="highlight"><pre>% npm install -g browserify
 % npm install reactify
 </pre></div>
 </div>
-<p>Now we have <tt class="docutils literal"><span class="pre">browserify</span></tt> command available and can use it like:</p>
+<p>Now we have <code class="docutils literal"><span class="pre">browserify</span></code> command available and can use it like:</p>
 <div class="highlight-python"><div class="highlight"><pre>% browserify ./index.js &gt; bundle.js
 </pre></div>
 </div>
-<p>This will create a file named <tt class="docutils literal"><span class="pre">bundle.js</span></tt> which can be included into an HTML
-file via <tt class="docutils literal"><span class="pre">&lt;script&gt;</span></tt> element.</p>
+<p>This will create a file named <code class="docutils literal"><span class="pre">bundle.js</span></code> which can be included into an HTML
+file via <code class="docutils literal"><span class="pre">&lt;script&gt;</span></code> element.</p>
 </div>
 <div class="section" id="bundling-commonjs-with-webpack">
 <h4>Bundling CommonJS with Webpack<a class="headerlink" href="#bundling-commonjs-with-webpack" title="Permalink to this headline">¶</a></h4>
@@ -240,7 +240,7 @@ file via <tt class="docutils literal"><span class="pre">&lt;script&gt;</span></t
 which consist of several chunks. You can read more on using Webpack in the
 <a class="reference external" href="Webpack">official documentation</a>.</p>
 <p>As React Forms is written using JSX and ES6 syntax, you would also need to install
-<tt class="docutils literal"><span class="pre">jsx-loader</span></tt> and use it with <tt class="docutils literal"><span class="pre">harmony</span></tt> flag. The relevant piece of Webpack
+<code class="docutils literal"><span class="pre">jsx-loader</span></code> and use it with <code class="docutils literal"><span class="pre">harmony</span></code> flag. The relevant piece of Webpack
 configuration:</p>
 <div class="highlight-python"><div class="highlight"><pre>module.exports = {
   ...

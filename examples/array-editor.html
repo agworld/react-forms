@@ -156,7 +156,7 @@
 <h1>Array editor example<a class="headerlink" href="#array-editor-example" title="Permalink to this headline">¶</a></h1>
 <p>This example implements custom repeating fieldset which adds a new item when
 user focuses on a last item in a fieldset. This allows to enter array values by
-simply moving focus forward using <tt class="docutils literal"><span class="pre">Tab</span></tt> key.</p>
+simply moving focus forward using <code class="docutils literal"><span class="pre">Tab</span></code> key.</p>
 <style>
   .rf-repeating-fieldset-remove {
     top: 0 !important;
@@ -267,13 +267,13 @@ var ArrayEditor = React.createClass({displayName: 'ArrayEditor',
       {onFocus: this.onFocus.bind(null, item.props.name)}
     )
     return (
-      React.DOM.div( {key:item.props.name, className:"rf-repeating-fieldset-item"}, 
-        item,
-        React.DOM.button(
-          {onClick:this.onRemoveItem.bind(null, item.props.name),
-          tabIndex:"-1",
-          type:"button",
-          className:"rf-repeating-fieldset-remove"}, "×"
+      React.createElement("div", {key: item.props.name, className: "rf-repeating-fieldset-item"}, 
+        item, 
+        React.createElement("button", {
+          onClick: this.onRemoveItem.bind(null, item.props.name), 
+          tabIndex: "-1", 
+          type: "button", 
+          className: "rf-repeating-fieldset-remove"}, "×"
         )
       )
     )
@@ -281,18 +281,18 @@ var ArrayEditor = React.createClass({displayName: 'ArrayEditor',
 
   render: function() {
     var fields = this.renderFields().map(this.decorate)
-    return this.transferPropsTo(React.DOM.div( {className:"ArrayEditor"}, fields))
+    return this.transferPropsTo(React.createElement("div", {className: "ArrayEditor"}, fields))
   }
 
 })
 var Values = (
-  List( {component:ArrayEditor}, 
-    Property(null )
+  React.createElement(List, {component: ArrayEditor}, 
+    React.createElement(Property, null)
   )
 )
 
 React.renderComponent(
-  Form( {schema:Values, value:['focus on me!']} ),
+  React.createElement(Form, {schema: Values, value: ['focus on me!']}),
   document.getElementById('example')
 )
     });

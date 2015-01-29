@@ -207,25 +207,25 @@ var Form = ReactForms.Form
 function Person(props) {
   props = props || {}
   return (
-    Schema( {name:props.name, label:props.label}, 
-      Property( {name:"first", label:"First name"} ),
-      Property( {name:"last", label:"Last name"} )
+    React.createElement(Schema, {name: props.name, label: props.label}, 
+      React.createElement(Property, {name: "first", label: "First name"}), 
+      React.createElement(Property, {name: "last", label: "Last name"})
     )
   )
 }
 
 var family = (
-  Schema(null, 
-    Person( {name:"mother", label:"Mother"} ),
-    Person( {name:"father", label:"Father"} ),
-    List( {name:"children", label:"Children"}, 
-      Person(null )
+  React.createElement(Schema, null, 
+    React.createElement(Person, {name: "mother", label: "Mother"}), 
+    React.createElement(Person, {name: "father", label: "Father"}), 
+    React.createElement(List, {name: "children", label: "Children"}, 
+      React.createElement(Person, null)
     )
   )
 )
 
 React.renderComponent(
-  Form( {schema:family} ),
+  React.createElement(Form, {schema: family}),
   document.getElementById('example'))
     });
     </script>

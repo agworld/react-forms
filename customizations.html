@@ -166,10 +166,10 @@ For example date pickers, WYSIWYG editors and so on.</li>
 <div class="section" id="input-components">
 <h2>Input components<a class="headerlink" href="#input-components" title="Permalink to this headline">¶</a></h2>
 <p>React Forms allows to customize input components on per-field basis.</p>
-<p>To use input component to render a field one should set an <tt class="docutils literal"><span class="pre">input</span></tt> property of the
-relevant schema node. Value of the <tt class="docutils literal"><span class="pre">input</span></tt> property should be a configured
-component instance which accepts <tt class="docutils literal"><span class="pre">value</span></tt> and <tt class="docutils literal"><span class="pre">onChange</span></tt> properties (basic
-<tt class="docutils literal"><span class="pre">&lt;input</span> <span class="pre">/&gt;</span></tt> component adheres to this):</p>
+<p>To use input component to render a field one should set an <code class="docutils literal"><span class="pre">input</span></code> property of the
+relevant schema node. Value of the <code class="docutils literal"><span class="pre">input</span></code> property should be a configured
+component instance which accepts <code class="docutils literal"><span class="pre">value</span></code> and <code class="docutils literal"><span class="pre">onChange</span></code> properties (basic
+<code class="docutils literal"><span class="pre">&lt;input</span> <span class="pre">/&gt;</span></code> component adheres to this):</p>
 <div class="highlight-python"><div class="highlight"><pre>&lt;Schema&gt;
   ...
   &lt;Property input={RadioButtonGroup(...)} /&gt;
@@ -180,11 +180,11 @@ component instance which accepts <tt class="docutils literal"><span class="pre">
 </div>
 <div class="section" id="form-components">
 <h2>Form components<a class="headerlink" href="#form-components" title="Permalink to this headline">¶</a></h2>
-<p><tt class="docutils literal"><span class="pre">Form</span></tt> component provided by the library has only the barebone functionality which
+<p><code class="docutils literal"><span class="pre">Form</span></code> component provided by the library has only the barebone functionality which
 hopefully will be useful for most of the apps, especially at the first stages of
 prototyping.</p>
 <p>Usually you would want to create your own form component which would manage form
-value and validation state in some custom way. For that there&#8217;s <tt class="docutils literal"><span class="pre">FormMixin</span></tt> mixin
+value and validation state in some custom way. For that there&#8217;s <code class="docutils literal"><span class="pre">FormMixin</span></code> mixin
 which makes creating new form components easy:</p>
 <div class="highlight-python"><div class="highlight"><pre>var FormFor = ReactForms.FormFor
 
@@ -203,11 +203,11 @@ var MyForm = React.createClass({
 </pre></div>
 </div>
 <p>Note that form component is not responsible for a layout of form fields inside
-it. It is the duty of <tt class="docutils literal"><span class="pre">Fieldset</span></tt>, <tt class="docutils literal"><span class="pre">RepeatingFieldset</span></tt> and <tt class="docutils literal"><span class="pre">Field</span></tt> components which
-correspond to <tt class="docutils literal"><span class="pre">Schema</span></tt>, <tt class="docutils literal"><span class="pre">List</span></tt> and <tt class="docutils literal"><span class="pre">Property</span></tt> schemas.</p>
-<p>Also, take a look at <tt class="docutils literal"><span class="pre">FormFor</span></tt> component. It generates a component tree for a
+it. It is the duty of <code class="docutils literal"><span class="pre">Fieldset</span></code>, <code class="docutils literal"><span class="pre">RepeatingFieldset</span></code> and <code class="docutils literal"><span class="pre">Field</span></code> components which
+correspond to <code class="docutils literal"><span class="pre">Schema</span></code>, <code class="docutils literal"><span class="pre">List</span></code> and <code class="docutils literal"><span class="pre">Property</span></code> schemas.</p>
+<p>Also, take a look at <code class="docutils literal"><span class="pre">FormFor</span></code> component. It generates a component tree for a
 current value of the form based on form&#8217;s schema. If form schema is represented
-as <tt class="docutils literal"><span class="pre">Property</span></tt> then just a single field will appear, if <tt class="docutils literal"><span class="pre">Schema</span></tt> — a fieldset.</p>
+as <code class="docutils literal"><span class="pre">Property</span></code> then just a single field will appear, if <code class="docutils literal"><span class="pre">Schema</span></code> — a fieldset.</p>
 </div>
 <div class="section" id="fieldset-components">
 <h2>Fieldset components<a class="headerlink" href="#fieldset-components" title="Permalink to this headline">¶</a></h2>
@@ -215,8 +215,8 @@ as <tt class="docutils literal"><span class="pre">Property</span></tt> then just
 components specifically to represent some schemas.</p>
 <p>Such components can be programmed to display/hide specific form fields based on
 value of other form fields and so on.</p>
-<p>There&#8217;s <tt class="docutils literal"><span class="pre">FieldsetMixin</span></tt> mixin which makes creating new fieldset components easy.</p>
-<p>Again note the usage of <tt class="docutils literal"><span class="pre">FormFor</span></tt> components which makes it possible to delegate
+<p>There&#8217;s <code class="docutils literal"><span class="pre">FieldsetMixin</span></code> mixin which makes creating new fieldset components easy.</p>
+<p>Again note the usage of <code class="docutils literal"><span class="pre">FormFor</span></code> components which makes it possible to delegate
 rendering of any specific field in fieldset to a corresponding component:</p>
 <div class="highlight-python"><div class="highlight"><pre>var FormFor = ReactForms.FormFor
 
@@ -236,7 +236,7 @@ var SpecialFieldset = React.createClass({
 })
 </pre></div>
 </div>
-<p>To use <tt class="docutils literal"><span class="pre">SpecialFieldset</span></tt> for a schema it is designed for, you need to set
+<p>To use <code class="docutils literal"><span class="pre">SpecialFieldset</span></code> for a schema it is designed for, you need to set
 component property of the schema. Of course if your fieldset is designed to be
 generic you can use it for any schema you want:</p>
 <div class="highlight-python"><div class="highlight"><pre>var SpecialSchema = (
@@ -250,10 +250,10 @@ generic you can use it for any schema you want:</p>
 <div class="section" id="repeating-fieldset-components">
 <h2>Repeating fieldset components<a class="headerlink" href="#repeating-fieldset-components" title="Permalink to this headline">¶</a></h2>
 <p>Similar to customization of fieldset rendering you might want to customize
-repeating fieldsets which renders <tt class="docutils literal"><span class="pre">List</span></tt> schemas.</p>
-<p>There&#8217;s <tt class="docutils literal"><span class="pre">RepeatingFieldsetMixin</span></tt> for that which provides <tt class="docutils literal"><span class="pre">items()</span></tt> method which
+repeating fieldsets which renders <code class="docutils literal"><span class="pre">List</span></code> schemas.</p>
+<p>There&#8217;s <code class="docutils literal"><span class="pre">RepeatingFieldsetMixin</span></code> for that which provides <code class="docutils literal"><span class="pre">items()</span></code> method which
 returns a list of form fields for each item in the value.</p>
-<p>There are also <tt class="docutils literal"><span class="pre">addItem()</span></tt> and <tt class="docutils literal"><span class="pre">removeItem(idx)</span></tt> methods which add and remove
+<p>There are also <code class="docutils literal"><span class="pre">addItem()</span></code> and <code class="docutils literal"><span class="pre">removeItem(idx)</span></code> methods which add and remove
 item by index correspondingly. You would want to use them to add controls to
 repeating fieldsets:</p>
 <div class="highlight-python"><div class="highlight"><pre>var SpecialRepeatingFieldset = React.createClass({
