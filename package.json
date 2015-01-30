@@ -1,5 +1,5 @@
 {
-  "name": "react-forms-react-0.12",
+  "name": "react-forms",
   "version": "0.6.3",
   "description": "Forms library for React. Fork of 0.6.x for React 0.12.x",
   "homepage": "http://agworld.github.io/react-forms/",
@@ -33,7 +33,7 @@
       ]
     ]
   },
-  "author": "Prometheus Research",
+  "author": "Agworld",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/agworld/react-forms/issues"
