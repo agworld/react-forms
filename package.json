@@ -1,6 +1,6 @@
 {
   "name": "react-forms",
-  "version": "0.6.3",
+  "version": "0.6.3-react-0.12",
   "description": "Forms library for React. Fork of 0.6.x for React 0.12.x",
   "homepage": "http://agworld.github.io/react-forms/",
   "main": "lib/index.js",
@@ -39,6 +39,6 @@
     "url": "https://github.com/agworld/react-forms/issues"
   },
   "dependencies": {
-    "reactify": "^0.13.1"
+    "reactify": "1.0.0"
   }
 }
