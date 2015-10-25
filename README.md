@@ -2,7 +2,7 @@
 
 ## React 0.12.x fork
 
-This is a fork of react-forms 0.6.x compatible with React 0.12.x. There are no API changes. 
+This is a fork of react-forms 0.6.x compatible with React 0.13.x. There are no API changes. 
 
 You can read the docs for this particular version [here][docs].
 
