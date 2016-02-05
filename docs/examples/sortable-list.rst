@@ -34,7 +34,7 @@ First we need to bring some names into scope:
   var List = ReactForms.schema.List
   var Property = ReactForms.schema.Property
   var RepeatingFieldset = ReactForms.RepeatingFieldset
-  var cloneWithProps = React.addons.cloneWithProps
+  var cloneWithProps = React.cloneElement
   var classSet = React.addons.classSet
   var Item = RepeatingFieldset.Item
 

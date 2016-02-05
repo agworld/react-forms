@@ -49,7 +49,7 @@ Implementation
     },
 
     decorate: function(item) {
-      item = React.addons.cloneWithProps(
+      item = React.cloneElement(
         item,
         {onFocus: this.onFocus.bind(null, item.props.name)}
       )
